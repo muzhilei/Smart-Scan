@@ -2,7 +2,7 @@ import 'package:get/get.dart';
 
 class home_controllers extends GetxController{
   var count = 0.obs;
-  var currentIndex = 1.obs;
+  var currentIndex = 0.obs;
 
 
   void increment(){

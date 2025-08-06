@@ -5,10 +5,15 @@ import 'package:smart_scan/home/controllers/home_controllers.dart';
 import 'package:smart_scan/home/widget/home_widget.dart';
 import 'package:smart_scan/homefragment/controllers/home_fragment_controllers.dart';
 import 'package:smart_scan/homefragment/views/home_fragment_views.dart';
+import 'package:smart_scan/settings/views/setting_views.dart';
 
 class home_views extends GetView<home_controllers>{
 
-  final home_fragment_controller = Get.put(home_fragment_controllers());
+  //界面集合
+  final getPage = [
+    home_fragment_views(),
+    setting_views()
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +35,7 @@ class home_views extends GetView<home_controllers>{
       //   onPressed: controller.increment,
       //   child: Icon(Icons.add),
       // ),
-      body: home_fragment_views(),
+      body: Obx(() => getPage[controller.currentIndex.value]),
       bottomNavigationBar: Obx(() =>
           BottomNavigationBar(
             //导航项数组
