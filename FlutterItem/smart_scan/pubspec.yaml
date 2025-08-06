@@ -39,6 +39,9 @@ dependencies:
   get: any
   # 二维码库
   qr_flutter: any
+  #吐司
+  fluttertoast: any
+
 
 dev_dependencies:
   flutter_test:

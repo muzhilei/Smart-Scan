@@ -4,22 +4,6 @@ import 'package:qr_flutter/qr_flutter.dart';
 
 class home_widget{
 
-  static Widget createBody(){
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        Center(
-          child: QrImageView(
-            data: "Flutter生成二维码文字",
-            size: 200.0,
-            embeddedImage: AssetImage("assets/about_icon.png"),
-            embeddedImageStyle: QrEmbeddedImageStyle(size: Size(30,30)),
-          ),
-        )
-      ],
-    );
-  }
-
   static List<BottomNavigationBarItem> HomeBarItem(){
     List<BottomNavigationBarItem> homeBarItemLists = [];
     var homeItem = BottomNavigationBarItem(
