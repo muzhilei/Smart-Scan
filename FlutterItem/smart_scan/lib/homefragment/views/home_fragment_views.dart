@@ -6,6 +6,8 @@ import 'package:smart_scan/homefragment/controllers/home_fragment_controllers.da
 
 class home_fragment_views extends GetView<home_fragment_controllers>{
 
+  var controllers = Get.put(home_fragment_controllers());
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -13,19 +15,21 @@ class home_fragment_views extends GetView<home_fragment_controllers>{
       color: Colors.white,
       padding: EdgeInsets.all(20),
       height: MediaQuery.of(context).size.height,
-      child: GridView.count(
-        //定义列数
-        crossAxisCount: 4,
-        //滚动方向
-        scrollDirection: Axis.vertical,
-        //横向间距
-        crossAxisSpacing: 5,
-        //纵向间距
-        mainAxisSpacing: 5,
-        //宽高比
-        childAspectRatio: 1,
-        //定于数据源
-        children: getHomeButtonListWidget(),
+      child: Obx(() =>
+          GridView.count(
+            //定义列数
+            crossAxisCount: 4,
+            //滚动方向
+            scrollDirection: Axis.vertical,
+            //横向间距
+            crossAxisSpacing: 5,
+            //纵向间距
+            mainAxisSpacing: 5,
+            //宽高比
+            childAspectRatio: 1,
+            //定于数据源
+            children: getHomeButtonListWidget(),
+          )
       ),
     );
   }
