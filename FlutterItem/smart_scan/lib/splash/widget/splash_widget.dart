@@ -1,0 +1,4 @@
+class splash_widget{
+
+}
+
