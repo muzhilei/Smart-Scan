@@ -1,0 +1,3 @@
+class scan_widget{
+
+}

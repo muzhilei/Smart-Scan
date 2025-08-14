@@ -3,20 +3,5 @@ import 'package:qr_flutter/qr_flutter.dart';
 
 class textscan_widget {
 
-  static Widget createBody(var datas){
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        Center(
-          child: QrImageView(
-            data: datas,
-            size: 200.0,
-            embeddedImage: AssetImage("assets/about_icon.png"),
-            embeddedImageStyle: QrEmbeddedImageStyle(size: Size(30,30)),
-          ),
-        )
-      ],
-    );
-  }
 
 }

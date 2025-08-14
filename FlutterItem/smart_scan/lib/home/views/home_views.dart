@@ -5,6 +5,7 @@ import 'package:smart_scan/home/controllers/home_controllers.dart';
 import 'package:smart_scan/home/widget/home_widget.dart';
 import 'package:smart_scan/homefragment/controllers/home_fragment_controllers.dart';
 import 'package:smart_scan/homefragment/views/home_fragment_views.dart';
+import 'package:smart_scan/scan/views/scan_views.dart';
 import 'package:smart_scan/settings/views/setting_views.dart';
 
 class home_views extends GetView<home_controllers>{
@@ -12,6 +13,7 @@ class home_views extends GetView<home_controllers>{
   //界面集合
   final getPage = [
     home_fragment_views(),
+    scan_views(),
     setting_views()
   ];
 

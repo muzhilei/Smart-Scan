@@ -3,6 +3,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:smart_scan/scanqr/views/scanqr_views.dart';
 import 'package:smart_scan/textscan/controllers/textscan_controllers.dart';
 import 'package:smart_scan/textscan/widget/textscan_widget.dart';
 import 'package:smart_scan/utils/CommonStatic.dart';
@@ -29,8 +30,8 @@ class textscan_views extends GetView<textscan_controllers>{
               decoration: InputDecoration(
                   labelText: "请输入任意文本",
                   labelStyle: TextStyle(color: Colors.grey),
-                  helperText: "请输入有效格式",
-                  errorText: "格式错误"
+                  // helperText: "请输入有效格式",
+                  // errorText: "格式错误"
               ),
               maxLines: 1,
               onChanged: controller.getEdteScanText,
@@ -53,10 +54,9 @@ class textscan_views extends GetView<textscan_controllers>{
               ),
               onTap: (){
                 // Fluttertoast.showToast(msg: "输出文本为 ${controller.editeScanText}");
-
+                Get.to(scanqr_views(),arguments: {CommonStatic.ScanQRData : controller.editeScanText.value});
               },
-            ),
-            Obx(() => textscan_widget.createBody(controller.editeScanText.value))
+            )
           ],
         )
       )

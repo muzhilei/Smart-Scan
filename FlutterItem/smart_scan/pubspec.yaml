@@ -37,10 +37,12 @@ dependencies:
   cupertino_icons: ^1.0.6
   # getX状态管理库
   get: any
-  # 二维码库
+  # 生成二维码库
   qr_flutter: any
   #吐司
   fluttertoast: any
+  # 扫描二维码
+  mobile_scanner: any
 
 
 dev_dependencies:
