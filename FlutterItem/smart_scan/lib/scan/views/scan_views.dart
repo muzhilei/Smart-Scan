@@ -18,7 +18,7 @@ class scan_views extends GetView{
           onDetect: (barcode){
             final List<Barcode> barcodes = barcode.barcodes;
             final Uint8List? image = barcode.image;
-            // for (final barcode in barcodes) {
+            // for (final barcode in barcodes) {[
             //   debugPrint('二维码找到！${barcode.rawValue}');
             // }
             Fluttertoast.showToast(msg: "二维码内容为：${barcodes[0].displayValue}");

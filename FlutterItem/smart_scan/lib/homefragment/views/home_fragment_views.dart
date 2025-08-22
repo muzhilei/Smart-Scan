@@ -3,9 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
+import 'package:smart_scan/contactscan/bindings/contact_scan_bindings.dart';
+import 'package:smart_scan/contactscan/views/contact_scan_views.dart';
+import 'package:smart_scan/contactscan/widget/contact_scan_widget.dart';
 import 'package:smart_scan/homefragment/controllers/home_fragment_controllers.dart';
 import 'package:smart_scan/textscan/bindings/textscan_bindings.dart';
 import 'package:smart_scan/textscan/views/textscan_views.dart';
+import 'package:smart_scan/urlscan/bindings/url_scan_bindings.dart';
+import 'package:smart_scan/urlscan/views/url_scan_views.dart';
 import 'package:smart_scan/utils/CommonStatic.dart';
 
 class home_fragment_views extends GetView<home_fragment_controllers>{
@@ -58,10 +63,10 @@ class home_fragment_views extends GetView<home_fragment_controllers>{
               Get.to(textscan_views(),binding: textscan_bindings());
               break;
             case CommonStatic.homeWebAddress:
-              Fluttertoast.showToast(msg: "点击了 ${CommonStatic.homeWebAddress}");
+              Get.to(url_scan_views(),binding: url_scan_bindings());
               break;
             case CommonStatic.homeContacts:
-              Fluttertoast.showToast(msg: "点击了 ${CommonStatic.homeContacts}");
+              Get.to(contact_scan_views(),binding: contact_scan_bindings());
               break;
             case CommonStatic.homeMessage:
               Fluttertoast.showToast(msg: "点击了 ${CommonStatic.homeMessage}");
