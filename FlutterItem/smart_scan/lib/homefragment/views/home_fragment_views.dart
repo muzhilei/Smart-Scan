@@ -13,6 +13,9 @@ import 'package:smart_scan/urlscan/bindings/url_scan_bindings.dart';
 import 'package:smart_scan/urlscan/views/url_scan_views.dart';
 import 'package:smart_scan/utils/CommonStatic.dart';
 
+import '../../wifiscan/bindings/wifi_scan_bindings.dart';
+import '../../wifiscan/views/wifi_scan_views.dart';
+
 class home_fragment_views extends GetView<home_fragment_controllers>{
 
   var controllers = Get.put(home_fragment_controllers());
@@ -81,7 +84,7 @@ class home_fragment_views extends GetView<home_fragment_controllers>{
               Fluttertoast.showToast(msg: "点击了 ${CommonStatic.homeEvent}");
               break;
             case CommonStatic.homeWIFI:
-              Fluttertoast.showToast(msg: "点击了 ${CommonStatic.homeWIFI}");
+              Get.to(wifi_scan_views(),binding: wifi_scan_bindings());
               break;
             case CommonStatic.homeLocation:
               Fluttertoast.showToast(msg: "点击了 ${CommonStatic.homeLocation}");

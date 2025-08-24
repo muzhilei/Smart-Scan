@@ -254,7 +254,7 @@ class contact_scan_views extends GetView<contact_scan_controllers>{
                 border: new Border.all(width: 2, color: Colors.lightGreen),
                 color: Colors.lightGreen
               ),
-              margin: EdgeInsets.only(top: 150,left: 40,right: 40),
+              margin: EdgeInsets.only(top: 100,left: 40,right: 40),
               width: double.infinity,
               height: 40,
               child: Center(

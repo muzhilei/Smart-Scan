@@ -88,7 +88,20 @@ class contact_scan_controllers extends GetxController{
   }
 
   String getContextText(){
-    return "";
+    String result = "\n 名：${editeNameText.value} 姓： ${editeSurNameText.value} \n "
+        "公司: ${editeCompanyText.value} 职称：${editeTitleText.value} \n "
+        "手机号码：${editePhoneText.value} \n "
+        "电子邮箱：${editeEmailText.value} \n "
+        "街道地址：${editeStreetAddressText.value} \n "
+        "邮政编码：${editePostalCodeText.value} 城市：${editeCityText.value} \n"
+        " 地区：${editeRegionText.value} 国家：${editeCountryText.value} \n "
+        "URL：${editeURLText.value}";
+
+    if(result.isEmpty){
+      result = "没有输入正确的数据，请返回查看";
+    }
+
+    return result;
   }
 
 }
