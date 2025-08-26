@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:smart_scan/wifiscan/controllers/wifi_scan_controllers.dart';
 
+import '../../scanqr/views/scanqr_views.dart';
 import '../../utils/CommonStatic.dart';
 
 class wifi_scan_views extends GetView<wifi_scan_controllers>{
-  
+
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -35,31 +37,23 @@ class wifi_scan_views extends GetView<wifi_scan_controllers>{
                       // errorText: "格式错误"
                     ),
                     maxLines: 1,
-                    // onChanged: controller.setEditeURLText,
+                    onChanged: controller.setEditeWiFiName,
                   ),
                 ),
               ],
             ),
           ),
           Container(
-            margin: EdgeInsets.only(top: 5,left: 10,right: 10),
+            margin: EdgeInsets.only(top: 20,left: 10,right: 10,bottom: 15),
             width: double.infinity,
-            height: 50,
-            child: Row(
-              children: [
-                Expanded(
-                  child: TextField(
-                    decoration: InputDecoration(
-                      labelText: "网络名称",
-                      labelStyle: TextStyle(color: Colors.green),
-                      // helperText: "请输入有效格式",
-                      // errorText: "格式错误"
-                    ),
-                    maxLines: 1,
-                    // onChanged: controller.setEditeURLText,
-                  ),
-                ),
-              ],
+            height: 40,
+            child: DropdownMenu<String>(
+              textStyle: TextStyle(fontSize: 12,color: Colors.black),
+              width: double.infinity,
+              menuHeight: 150,
+              initialSelection: controller.initDropDownValue(),
+              onSelected: controller.setSelectMenu,
+              dropdownMenuEntries: controller.buildMenuList(),
             ),
           ),
           Container(
@@ -77,7 +71,7 @@ class wifi_scan_views extends GetView<wifi_scan_controllers>{
                       // errorText: "格式错误"
                     ),
                     maxLines: 1,
-                    // onChanged: controller.setEditeURLText,
+                    onChanged: controller.setEditeWiFiPass,
                   ),
                 ),
               ],
@@ -106,7 +100,7 @@ class wifi_scan_views extends GetView<wifi_scan_controllers>{
               ),
             ),
             onTap: (){
-              // Get.to(scanqr_views(),arguments: {CommonStatic.ScanQRData : controller.getContextText()});
+              Get.to(scanqr_views(),arguments: {CommonStatic.ScanQRData : controller.getContextText()});
             },
           ),
         ],

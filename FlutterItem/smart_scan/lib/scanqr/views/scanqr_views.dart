@@ -14,6 +14,7 @@ class scanqr_views extends GetView{
     var data = Get.arguments;
     // TODO: implement build
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         foregroundColor: Colors.white,
         backgroundColor: Colors.lightGreen,
