@@ -6,7 +6,11 @@ import 'package:get/get.dart';
 import 'package:smart_scan/contactscan/bindings/contact_scan_bindings.dart';
 import 'package:smart_scan/contactscan/views/contact_scan_views.dart';
 import 'package:smart_scan/contactscan/widget/contact_scan_widget.dart';
+import 'package:smart_scan/eventscan/bindings/event_scan_bindings.dart';
+import 'package:smart_scan/eventscan/views/event_scan_views.dart';
 import 'package:smart_scan/homefragment/controllers/home_fragment_controllers.dart';
+import 'package:smart_scan/locationscan/bindings/location_scan_bindings.dart';
+import 'package:smart_scan/locationscan/views/location_scan_views.dart';
 import 'package:smart_scan/textscan/bindings/textscan_bindings.dart';
 import 'package:smart_scan/textscan/views/textscan_views.dart';
 import 'package:smart_scan/urlscan/bindings/url_scan_bindings.dart';
@@ -81,13 +85,13 @@ class home_fragment_views extends GetView<home_fragment_controllers>{
               Fluttertoast.showToast(msg: "点击了 ${CommonStatic.homeClipBoard}");
               break;
             case CommonStatic.homeEvent:
-              Fluttertoast.showToast(msg: "点击了 ${CommonStatic.homeEvent}");
+              Get.to(event_scan_views(),binding: event_scan_bindings());
               break;
             case CommonStatic.homeWIFI:
               Get.to(wifi_scan_views(),binding: wifi_scan_bindings());
               break;
             case CommonStatic.homeLocation:
-              Fluttertoast.showToast(msg: "点击了 ${CommonStatic.homeLocation}");
+              Get.to(location_scan_views(),binding: location_scan_bindings());
               break;
           }
         },
