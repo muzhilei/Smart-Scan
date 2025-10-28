@@ -3,6 +3,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:smart_scan/urlscan/controllers/url_scan_controllers.dart';
 
+import 'package:smart_scan/l10n/generated/l10n.dart';
 import '../../scanqr/views/scanqr_views.dart';
 import '../../utils/CommonStatic.dart';
 
@@ -17,7 +18,7 @@ class url_scan_views extends GetView<url_scan_controllers>{
         appBar: AppBar(
           foregroundColor: Colors.white,
           backgroundColor: Colors.lightGreen,
-          title: Text(CommonStatic.homeWebAddress,style: TextStyle(fontSize: 20,color: Colors.white),),
+          title: Text(S.of(context).homeWebAddress,style: TextStyle(fontSize: 20,color: Colors.white),),
           centerTitle: true,
         ),
         body:Container(
@@ -29,7 +30,7 @@ class url_scan_views extends GetView<url_scan_controllers>{
                 TextField(
                   controller: _textcontroller,
                   decoration: InputDecoration(
-                    labelText: "请输入网址",
+                    labelText: S.of(context).url_scan_input_tips,
                     labelStyle: TextStyle(color: Colors.grey),
                     // helperText: "请输入有效格式",
                     // errorText: "格式错误"
@@ -50,7 +51,7 @@ class url_scan_views extends GetView<url_scan_controllers>{
                       border: new Border.all(width: 2, color: Colors.lightGreen),
                     ),
                     child: Center(
-                      child: Text('确认',style: TextStyle(fontSize: 18,color: Colors.white),),
+                      child: Text(S.of(context).button_ok,style: TextStyle(fontSize: 18,color: Colors.white),),
                     ),
                   ),
                   onTap: (){

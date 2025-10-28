@@ -3,6 +3,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:smart_scan/contactscan/controllers/contact_scan_controllers.dart';
 
+import 'package:smart_scan/l10n/generated/l10n.dart';
 import '../../scanqr/views/scanqr_views.dart';
 import '../../utils/CommonStatic.dart';
 
@@ -15,7 +16,7 @@ class contact_scan_views extends GetView<contact_scan_controllers>{
       appBar: AppBar(
         foregroundColor: Colors.white,
         backgroundColor: Colors.lightGreen,
-        title: Text(CommonStatic.homeContacts,style: TextStyle(fontSize: 20,color: Colors.white),),
+        title: Text(S.of(context).homeContacts,style: TextStyle(fontSize: 20,color: Colors.white),),
         centerTitle: true,
       ),
       body: Column(
@@ -29,7 +30,7 @@ class contact_scan_views extends GetView<contact_scan_controllers>{
                 Expanded(
                     child: TextField(
                       decoration: InputDecoration(
-                        labelText: "名",
+                        labelText: S.of(context).contact_scan_name,
                         labelStyle: TextStyle(color: Colors.green),
                         // helperText: "请输入有效格式",
                         // errorText: "格式错误"
@@ -41,7 +42,7 @@ class contact_scan_views extends GetView<contact_scan_controllers>{
                 Expanded(
                   child: TextField(
                     decoration: InputDecoration(
-                      labelText: "姓",
+                      labelText: S.of(context).contact_scan_surname,
                       labelStyle: TextStyle(color: Colors.green),
                       // helperText: "请输入有效格式",
                       // errorText: "格式错误"
@@ -62,7 +63,7 @@ class contact_scan_views extends GetView<contact_scan_controllers>{
                 Expanded(
                   child: TextField(
                     decoration: InputDecoration(
-                      labelText: "公司",
+                      labelText: S.of(context).contact_scan_company,
                       labelStyle: TextStyle(color: Colors.green),
                       // helperText: "请输入有效格式",
                       // errorText: "格式错误"
@@ -74,7 +75,7 @@ class contact_scan_views extends GetView<contact_scan_controllers>{
                 Expanded(
                   child: TextField(
                     decoration: InputDecoration(
-                      labelText: "职称",
+                      labelText: S.of(context).contact_scan_title,
                       labelStyle: TextStyle(color: Colors.green),
                       // helperText: "请输入有效格式",
                       // errorText: "格式错误"
@@ -96,7 +97,7 @@ class contact_scan_views extends GetView<contact_scan_controllers>{
                   child: TextField(
                     keyboardType: TextInputType.phone,
                     decoration: InputDecoration(
-                      labelText: "手机号码",
+                      labelText: S.of(context).contact_scan_phone,
                       labelStyle: TextStyle(color: Colors.green),
                       // helperText: "请输入有效格式",
                       // errorText: "格式错误"
@@ -118,7 +119,7 @@ class contact_scan_views extends GetView<contact_scan_controllers>{
                   child: TextField(
                     keyboardType: TextInputType.emailAddress,
                     decoration: InputDecoration(
-                      labelText: "电子邮箱",
+                      labelText: S.of(context).contact_scan_email,
                       labelStyle: TextStyle(color: Colors.green),
                       // helperText: "请输入有效格式",
                       // errorText: "格式错误"
@@ -140,7 +141,7 @@ class contact_scan_views extends GetView<contact_scan_controllers>{
                   child: TextField(
                     keyboardType: TextInputType.streetAddress,
                     decoration: InputDecoration(
-                      labelText: "街道地址",
+                      labelText: S.of(context).contact_scan_street,
                       labelStyle: TextStyle(color: Colors.green),
                       // helperText: "请输入有效格式",
                       // errorText: "格式错误"
@@ -161,7 +162,7 @@ class contact_scan_views extends GetView<contact_scan_controllers>{
                 Expanded(
                   child: TextField(
                     decoration: InputDecoration(
-                      labelText: "邮政编码",
+                      labelText: S.of(context).contact_scan_code,
                       labelStyle: TextStyle(color: Colors.green),
                       // helperText: "请输入有效格式",
                       // errorText: "格式错误"
@@ -173,7 +174,7 @@ class contact_scan_views extends GetView<contact_scan_controllers>{
                 Expanded(
                   child: TextField(
                     decoration: InputDecoration(
-                      labelText: "城市",
+                      labelText: S.of(context).contact_scan_city,
                       labelStyle: TextStyle(color: Colors.green),
                       // helperText: "请输入有效格式",
                       // errorText: "格式错误"
@@ -194,7 +195,7 @@ class contact_scan_views extends GetView<contact_scan_controllers>{
                 Expanded(
                   child: TextField(
                     decoration: InputDecoration(
-                      labelText: "地区",
+                      labelText: S.of(context).contact_scan_area,
                       labelStyle: TextStyle(color: Colors.green),
                       // helperText: "请输入有效格式",
                       // errorText: "格式错误"
@@ -206,7 +207,7 @@ class contact_scan_views extends GetView<contact_scan_controllers>{
                 Expanded(
                   child: TextField(
                     decoration: InputDecoration(
-                      labelText: "国家",
+                      labelText: S.of(context).contact_scan_country,
                       labelStyle: TextStyle(color: Colors.green),
                       // helperText: "请输入有效格式",
                       // errorText: "格式错误"
@@ -227,7 +228,7 @@ class contact_scan_views extends GetView<contact_scan_controllers>{
                 Expanded(
                   child: TextField(
                     decoration: InputDecoration(
-                      labelText: "网址",
+                      labelText: S.of(context).homeWebAddress,
                       labelStyle: TextStyle(color: Colors.green),
                       // helperText: "请输入有效格式",
                       // errorText: "格式错误"
@@ -258,11 +259,11 @@ class contact_scan_views extends GetView<contact_scan_controllers>{
               width: double.infinity,
               height: 40,
               child: Center(
-                child: Text('创建',style: TextStyle(fontSize: 16,color: Colors.white),),
+                child: Text(S.of(context).button_ok,style: TextStyle(fontSize: 16,color: Colors.white),),
               ),
             ),
             onTap: (){
-              Get.to(scanqr_views(),arguments: {CommonStatic.ScanQRData : controller.getContextText()});
+              Get.to(scanqr_views(),arguments: {CommonStatic.ScanQRData : controller.getContextText(context)});
             },
           ),
         ],

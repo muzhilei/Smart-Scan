@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:smart_scan/wifiscan/controllers/wifi_scan_controllers.dart';
 
+import 'package:smart_scan/l10n/generated/l10n.dart';
 import '../../scanqr/views/scanqr_views.dart';
 import '../../utils/CommonStatic.dart';
 
@@ -17,7 +18,7 @@ class wifi_scan_views extends GetView<wifi_scan_controllers>{
       appBar: AppBar(
         foregroundColor: Colors.white,
         backgroundColor: Colors.lightGreen,
-        title: Text(CommonStatic.homeWIFI,style: TextStyle(fontSize: 20,color: Colors.white),),
+        title: Text(S.of(context).homeWIFI,style: TextStyle(fontSize: 20,color: Colors.white),),
         centerTitle: true,
       ),
       body:Column(
@@ -31,7 +32,7 @@ class wifi_scan_views extends GetView<wifi_scan_controllers>{
                 Expanded(
                   child: TextField(
                     decoration: InputDecoration(
-                      labelText: "网络名称",
+                      labelText: S.of(context).wifi_scan_name,
                       labelStyle: TextStyle(color: Colors.green),
                       // helperText: "请输入有效格式",
                       // errorText: "格式错误"
@@ -65,7 +66,7 @@ class wifi_scan_views extends GetView<wifi_scan_controllers>{
                 Expanded(
                   child: TextField(
                     decoration: InputDecoration(
-                      labelText: "密码",
+                      labelText: S.of(context).wifi_scan_password,
                       labelStyle: TextStyle(color: Colors.green),
                       // helperText: "请输入有效格式",
                       // errorText: "格式错误"
@@ -96,11 +97,11 @@ class wifi_scan_views extends GetView<wifi_scan_controllers>{
               width: double.infinity,
               height: 40,
               child: Center(
-                child: Text('创建',style: TextStyle(fontSize: 16,color: Colors.white),),
+                child: Text(S.of(context).button_ok,style: TextStyle(fontSize: 16,color: Colors.white),),
               ),
             ),
             onTap: (){
-              Get.to(scanqr_views(),arguments: {CommonStatic.ScanQRData : controller.getContextText()});
+              Get.to(scanqr_views(),arguments: {CommonStatic.ScanQRData : controller.getContextText(context)});
             },
           ),
         ],

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../l10n/generated/l10n.dart';
+
 class wifi_scan_controllers extends GetxController{
 
   final List<String> menu = ['WPA/WPA2/WPA3', 'WEP'];
@@ -37,8 +39,8 @@ class wifi_scan_controllers extends GetxController{
     }).toList();
   }
 
-  String getContextText(){
-    return "\n 网络名称： ${editeWIFIName.value} \n ${dropdownValue.value} \n 密码： ${editeWIFIPass.value}";
+  String getContextText(BuildContext context){
+    return "\n ${S.of(context).wifi_scan_name}： ${editeWIFIName.value} \n ${dropdownValue.value} \n ${S.of(context).wifi_scan_password}： ${editeWIFIPass.value}";
   }
 
 }

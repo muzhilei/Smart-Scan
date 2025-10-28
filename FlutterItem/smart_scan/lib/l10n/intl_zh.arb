@@ -1,0 +1,21 @@
+{
+  "homeText": "文本",
+  "homeWebAddress": "网址",
+  "homeContacts": "联系人",
+  "homeWIFI": "WIFI",
+  "homeLocation": "地点",
+  "homeEvent": "事件",
+  "homeClipBoard": "剪切板",
+  "homeEmail": "电子邮箱",
+  "homeMessage": "短信",
+  "scanQrShare": "二维码分享",
+  "scanQrResult": "扫码结果",
+  "versionInfo": "版本信息",
+  "aboutMe": "关于我们",
+  "text_scan_input_tips": "请输入任意文本",
+  "url_scan_input_tips": "请输入网址",
+  "button_ok": "确认",
+  "home": "首页",
+  "scan": "扫码",
+  "setting": "设置"
+}

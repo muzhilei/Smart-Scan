@@ -1,4 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+
+import '../../l10n/generated/l10n.dart';
 
 class contact_scan_controllers extends GetxController{
 
@@ -87,18 +90,18 @@ class contact_scan_controllers extends GetxController{
     update();
   }
 
-  String getContextText(){
-    String result = "\n 名：${editeNameText.value} 姓： ${editeSurNameText.value} \n "
-        "公司: ${editeCompanyText.value} 职称：${editeTitleText.value} \n "
-        "手机号码：${editePhoneText.value} \n "
-        "电子邮箱：${editeEmailText.value} \n "
-        "街道地址：${editeStreetAddressText.value} \n "
-        "邮政编码：${editePostalCodeText.value} 城市：${editeCityText.value} \n"
-        " 地区：${editeRegionText.value} 国家：${editeCountryText.value} \n "
-        "URL：${editeURLText.value}";
+  String getContextText(BuildContext context){
+    String result = "\n ${S.of(context).contact_scan_name}：${editeNameText.value} ${S.of(context).contact_scan_surname}： ${editeSurNameText.value} \n "
+        "${S.of(context).contact_scan_company}: ${editeCompanyText.value} ${S.of(context).contact_scan_title}：${editeTitleText.value} \n "
+        "${S.of(context).contact_scan_phone}：${editePhoneText.value} \n "
+        "${S.of(context).contact_scan_email}：${editeEmailText.value} \n "
+        "${S.of(context).contact_scan_street}：${editeStreetAddressText.value} \n "
+        "${S.of(context).contact_scan_code}：${editePostalCodeText.value} ${S.of(context).contact_scan_city}：${editeCityText.value} \n"
+        "${S.of(context).contact_scan_area}：${editeRegionText.value} ${S.of(context).contact_scan_country}：${editeCountryText.value} \n "
+        "${S.of(context).homeWebAddress}：${editeURLText.value}";
 
     if(result.isEmpty){
-      result = "没有输入正确的数据，请返回查看";
+      result = S.of(context).contack_scan_input_tips;
     }
 
     return result;

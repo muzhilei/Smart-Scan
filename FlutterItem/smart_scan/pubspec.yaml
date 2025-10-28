@@ -40,9 +40,25 @@ dependencies:
   # 生成二维码库
   qr_flutter: any
   #吐司
-  fluttertoast: any
+#  fluttertoast: any
   # 扫描二维码
   mobile_scanner: any
+  # 剪切板
+  clipboard: any
+  # 截图
+  screenshot: any
+  # 获取本地地址
+  path_provider: any
+  # 分享
+  share_plus: any
+  # 版本号获取
+  package_info_plus: any
+  # 版本号获取
+  device_info_plus: any
+  # 多国语言
+  flutter_localizations:
+    sdk: flutter
+  intl: any
 
 
 dev_dependencies:
@@ -66,9 +82,29 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+  generate: true  # 自动生成代码
   assets:
     - assets/about_icon.png
     - assets/icon_picture.png
+    - assets/icon_logo.png
+    - assets/fragment_home_mal.png
+    - assets/fragment_home_normal.png
+    - assets/fragment_scan_mal.png
+    - assets/fragment_scan_normal.png
+    - assets/fragment_setting_mal.png
+    - assets/fragment_setting_normal.png
+    - assets/icon_boarnd.png
+    - assets/icon_content.png
+    - assets/icon_emal.png
+    - assets/icon_event.png
+    - assets/icon_location.png
+    - assets/icon_ms.png
+    - assets/icon_text.png
+    - assets/icon_web.png
+    - assets/icon_wifi.png
+    - assets/icon_version.png
+    - assets/icon_about.png
+    - assets/icon_history.png
 
 
   # To add assets to your application, add an assets section, like this:
@@ -101,3 +137,10 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+flutter_intl:
+  enabled: true
+  class_name: S  # 生成的本地化类名
+  main_locale: zh  # 主要语言
+  arb_dir: lib/l10n/arb  # ARB文件存放目录
+  output_dir: lib/l10n/generated  # 生成的代码存放目录
+

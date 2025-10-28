@@ -1,4 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+
+import '../../l10n/generated/l10n.dart';
 
 class location_scan_controllers extends GetxController{
 
@@ -15,8 +18,8 @@ class location_scan_controllers extends GetxController{
     update();
   }
 
-  String getContextText(){
-    return "\n 纬度： ${editeLatitude.value}  经度： ${editeLongitude.value}";
+  String getContextText(BuildContext context){
+    return "\n ${S.of(context).location_scan_latitude}： ${editeLatitude.value}  ${S.of(context).location_scan_longitude}： ${editeLongitude.value}";
   }
 
 }

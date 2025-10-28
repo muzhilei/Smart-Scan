@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
+import 'package:smart_scan/about/bindings/about_bindings.dart';
+import 'package:smart_scan/about/views/about_views.dart';
 import 'package:smart_scan/settings/controllers/setting_controllers.dart';
+import 'package:smart_scan/versioninfo/bindings/version_info_bindings.dart';
+import 'package:smart_scan/versioninfo/views/version_info_views.dart';
+import '../../l10n/generated/l10n.dart';
 
 class setting_views extends GetView<setting_controllers>{
 
@@ -18,9 +23,9 @@ class setting_views extends GetView<setting_controllers>{
               height: 60,
               child: Row(
                 children: [
-                  Icon(Icons.history,size: 30,),
+                  Image.asset('assets/icon_history.png',scale: 5,),
                   Expanded(
-                      child: Text('历史记录',style: TextStyle(fontSize: 20,color: Colors.black),)
+                      child: Text(S.of(context).history,style: TextStyle(fontSize: 20,color: Colors.black),)
                   ),
                   Icon(Icons.arrow_forward_ios,size: 20,),
                 ],
@@ -34,14 +39,17 @@ class setting_views extends GetView<setting_controllers>{
               height: 60,
               child: Row(
                 children: [
-                  Icon(Icons.verified_user_outlined,size: 30,),
+                  Image.asset('assets/icon_version.png',scale: 5,),
                   Expanded(
-                      child: Text('版本信息',style: TextStyle(fontSize: 20,color: Colors.black),)
+                      child: Text(S.of(context).versionInfo,style: TextStyle(fontSize: 20,color: Colors.black),)
                   ),
                   Icon(Icons.arrow_forward_ios,size: 20,),
                 ],
               ),
             ),
+            onTap: (){
+              Get.to(version_info_views(),binding: version_info_bindings());
+            },
           ),
           InkWell(
             child: Container(
@@ -50,14 +58,17 @@ class setting_views extends GetView<setting_controllers>{
               height: 60,
               child: Row(
                 children: [
-                  Icon(Icons.adb,size: 30,),
+                Image.asset('assets/icon_about.png',scale: 5,),
                   Expanded(
-                      child: Text('关于我们',style: TextStyle(fontSize: 20,color: Colors.black),)
+                      child: Text(S.of(context).aboutMe,style: TextStyle(fontSize: 20,color: Colors.black),)
                   ),
                   Icon(Icons.arrow_forward_ios,size: 20,),
                 ],
               ),
             ),
+            onTap: (){
+              Get.to(about_view(),binding: about_bindings());
+            },
           )
         ],
       ),

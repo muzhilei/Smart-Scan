@@ -41,7 +41,7 @@ class home_views extends GetView<home_controllers>{
       bottomNavigationBar: Obx(() =>
           BottomNavigationBar(
             //导航项数组
-            items: home_widget.HomeBarItem(),
+            items: home_widget.HomeBarItem(context),
             //当前选中项的索引
             currentIndex: controller.currentIndex.value,
             //点击导航项时触发的回调函数
@@ -54,7 +54,6 @@ class home_views extends GetView<home_controllers>{
             backgroundColor: Colors.white,
             //导航栏的阴影大小
             elevation: 8,
-
             // // 导航栏的形状，这里设置为圆角
             // shape: RoundedRectangleBorder(
             //   borderRadius: BorderRadius.circular(20.0),
@@ -62,12 +61,12 @@ class home_views extends GetView<home_controllers>{
 
             // 自定义选中项的图标主题
             selectedIconTheme: IconThemeData(
-              size: 30.0, // 选中图标大小
+              size: 20.0, // 选中图标大小
             ),
 
             // 自定义未选中项的图标主题
             unselectedIconTheme: IconThemeData(
-              size: 25.0, // 未选中图标大小
+              size: 15.0, // 未选中图标大小
             ),
 
             // 自定义选中项的文字样式

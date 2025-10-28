@@ -11,7 +11,7 @@ class scanqr_widget{
           child: QrImageView(
             data: datas,
             size: 300.0,
-            embeddedImage: AssetImage("assets/about_icon.png"),
+            // embeddedImage: AssetImage("assets/about_icon.png"),
             embeddedImageStyle: QrEmbeddedImageStyle(size: Size(30,30)),
           ),
         )

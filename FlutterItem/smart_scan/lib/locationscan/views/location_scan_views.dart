@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:smart_scan/l10n/generated/l10n.dart';
 import 'package:smart_scan/locationscan/controllers/location_scan_controllers.dart';
 
 import '../../scanqr/views/scanqr_views.dart';
@@ -15,7 +16,7 @@ class location_scan_views extends GetView<location_scan_controllers>{
       appBar: AppBar(
         foregroundColor: Colors.white,
         backgroundColor: Colors.lightGreen,
-        title: Text(CommonStatic.homeLocation,style: TextStyle(fontSize: 20,color: Colors.white),),
+        title: Text(S.of(context).homeLocation,style: TextStyle(fontSize: 20,color: Colors.white),),
         centerTitle: true,
       ),
       body: Column(
@@ -29,7 +30,7 @@ class location_scan_views extends GetView<location_scan_controllers>{
                 Expanded(
                   child: TextField(
                     decoration: InputDecoration(
-                      labelText: "纬度",
+                      labelText: S.of(context).location_scan_latitude,
                       labelStyle: TextStyle(color: Colors.green),
                       // helperText: "请输入有效格式",
                       // errorText: "格式错误"
@@ -50,7 +51,7 @@ class location_scan_views extends GetView<location_scan_controllers>{
                 Expanded(
                   child: TextField(
                     decoration: InputDecoration(
-                      labelText: "经度",
+                      labelText: S.of(context).location_scan_longitude,
                       labelStyle: TextStyle(color: Colors.green),
                       // helperText: "请输入有效格式",
                       // errorText: "格式错误"
@@ -81,11 +82,11 @@ class location_scan_views extends GetView<location_scan_controllers>{
               width: double.infinity,
               height: 40,
               child: Center(
-                child: Text('创建',style: TextStyle(fontSize: 16,color: Colors.white),),
+                child: Text(S.of(context).button_ok,style: TextStyle(fontSize: 16,color: Colors.white),),
               ),
             ),
             onTap: (){
-              Get.to(scanqr_views(),arguments: {CommonStatic.ScanQRData : controller.getContextText()});
+              Get.to(scanqr_views(),arguments: {CommonStatic.ScanQRData : controller.getContextText(context)});
             },
           ),
         ],

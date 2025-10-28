@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:smart_scan/scanqr/views/scanqr_views.dart';
 import 'package:smart_scan/textscan/controllers/textscan_controllers.dart';
 import 'package:smart_scan/textscan/widget/textscan_widget.dart';
 import 'package:smart_scan/utils/CommonStatic.dart';
+
+import 'package:smart_scan/l10n/generated/l10n.dart';
 
 class textscan_views extends GetView<textscan_controllers>{
 
@@ -17,7 +18,7 @@ class textscan_views extends GetView<textscan_controllers>{
       appBar: AppBar(
         foregroundColor: Colors.white,
         backgroundColor: Colors.lightGreen,
-        title: Text(CommonStatic.homeText,style: TextStyle(fontSize: 20,color: Colors.white),),
+        title: Text(S.of(context).homeText,style: TextStyle(fontSize: 20,color: Colors.white),),
         centerTitle: true,
       ),
       body:Container(
@@ -28,7 +29,7 @@ class textscan_views extends GetView<textscan_controllers>{
           children: [
             TextField(
               decoration: InputDecoration(
-                  labelText: "请输入任意文本",
+                  labelText: S.of(context).text_scan_input_tips,
                   labelStyle: TextStyle(color: Colors.grey),
                   // helperText: "请输入有效格式",
                   // errorText: "格式错误"
@@ -49,7 +50,7 @@ class textscan_views extends GetView<textscan_controllers>{
                   border: new Border.all(width: 2, color: Colors.lightGreen),
                 ),
                 child: Center(
-                  child: Text('确认',style: TextStyle(fontSize: 18,color: Colors.white),),
+                  child: Text(S.of(context).button_ok,style: TextStyle(fontSize: 18,color: Colors.white),),
                 ),
               ),
               onTap: (){
