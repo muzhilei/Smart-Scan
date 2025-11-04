@@ -8,6 +8,8 @@ import 'package:smart_scan/homefragment/views/home_fragment_views.dart';
 import 'package:smart_scan/scan/views/scan_views.dart';
 import 'package:smart_scan/settings/views/setting_views.dart';
 
+import '../../db/DatabaseHelper.dart';
+
 class home_views extends GetView<home_controllers>{
 
   //界面集合

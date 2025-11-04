@@ -16,22 +16,22 @@ class setting_views extends GetView<setting_controllers>{
     return Container(
       child: Column(
         children: [
-          InkWell(
-            child: Container(
-              padding: EdgeInsets.only(left: 20,right: 20),
-              width: double.infinity,
-              height: 60,
-              child: Row(
-                children: [
-                  Image.asset('assets/icon_history.png',scale: 5,),
-                  Expanded(
-                      child: Text(S.of(context).history,style: TextStyle(fontSize: 20,color: Colors.black),)
-                  ),
-                  Icon(Icons.arrow_forward_ios,size: 20,),
-                ],
-              ),
-            ),
-          ),
+          // InkWell(
+          //   child: Container(
+          //     padding: EdgeInsets.only(left: 20,right: 20),
+          //     width: double.infinity,
+          //     height: 60,
+          //     child: Row(
+          //       children: [
+          //         Image.asset('assets/icon_history.png',scale: 5,),
+          //         Expanded(
+          //             child: Text(S.of(context).history,style: TextStyle(fontSize: 20,color: Colors.black),)
+          //         ),
+          //         Icon(Icons.arrow_forward_ios,size: 20,),
+          //       ],
+          //     ),
+          //   ),
+          // ),
           InkWell(
             child: Container(
               padding: EdgeInsets.only(left: 20,right: 20),
